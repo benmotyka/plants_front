@@ -21,6 +21,7 @@ import SettingsScreen from "screens/settings";
 import LoginScreen from "screens/login";
 import RegisterScreen from "screens/register";
 import { store, persistor } from "store";
+import './config/i18n'
 
 export type RootStackParamList = {
   login: undefined;

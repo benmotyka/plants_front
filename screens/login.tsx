@@ -3,6 +3,7 @@ import { Formik, FormikHelpers } from "formik";
 import { useIsFocused } from "@react-navigation/native";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { useTranslation } from 'react-i18next';
 
 import { RootStackParamList } from "../App";
 import plantsApi from "config/api/plants";
@@ -41,6 +42,7 @@ const Login = ({ navigation }: LoginProps): JSX.Element => {
 
   const isFocused = useIsFocused();
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   useEffect(() => {
     try {
@@ -91,7 +93,7 @@ const Login = ({ navigation }: LoginProps): JSX.Element => {
   return (
     <ScreenContainer>
       <ColumnCenterWrapper>
-        <Header>Login</Header>
+        <Header>Login {t('common:hello')}</Header>
         <Formik
           initialValues={{ username: "", password: "" }}
           onSubmit={onSubmit}
